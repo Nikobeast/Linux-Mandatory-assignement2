@@ -21,8 +21,9 @@ BELOW YOU WILL FIND COMMANDS USED ETC: -----------------------------------------
 STATIC IP FOR CONTAINERS: -------------------------------------------------------------
 
 Create /etc/lxc/dhcp.conf
-  dhcp-host=C1,10.0.3.11
-  dhcp-host=C2,10.0.3.12
+
+dhcp-host=C1,10.0.3.11
+dhcp-host=C2,10.0.3.12
   
   
 
