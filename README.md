@@ -35,6 +35,7 @@ systemctl restart lxc-net
   
   
 USEFUL COMMAND FOR SETUP AND DEBUGGING: ---------------------------------------------
+
   
 lxc-stop -n containerName
 
@@ -44,7 +45,7 @@ lxc-attach -n containerName (will go "into" container)
 
 lxc-destroy -n containerName (destorys the container)
 
-exit (will exit and container)
+exit (will exit the container)
   
 lxc-ls --fancy OR lxc-ls -f
 
