@@ -23,6 +23,7 @@ STATIC IP FOR CONTAINERS: ------------------------------------------------------
 Create /etc/lxc/dhcp.conf
 
 dhcp-host=C1,10.0.3.11
+
 dhcp-host=C2,10.0.3.12
   
   
@@ -36,18 +37,26 @@ systemctl restart lxc-net
 USEFUL COMMAND FOR SETUP AND DEBUGGING: ---------------------------------------------
   
 lxc-stop -n containerName
+
 lxc-start -n containerName
+
 lxc-attach -n containerName (will go "into" container)
+
 lxc-destroy -n containerName (destorys the container)
+
 exit (will exit and container)
   
 lxc-ls --fancy OR lxc-ls -f
+
   This returns: name, state and IP
+  
   This is done to control if contrainer is running or stopped and if static IP is 
   working as inteded
 
 sysctl net.ipv4.ip_forward=1 (This need to be set to 1, to enable forwarding of ip from PI to container)
 
-iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.0.3.11:8000  (Rerouting from PI's port 80 to C1:8000)
+(Rerouting from PI's port 80 to C1:8000)
+
+iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.0.3.11:8000  
 
 
