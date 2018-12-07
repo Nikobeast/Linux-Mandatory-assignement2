@@ -18,6 +18,20 @@ Best regards group 6.
 
 BELOW YOU WILL FIND COMMANDS USED ETC: -----------------------------------------------
 
+To fetch the random numbers from C2 the following command was used:
+
+echo getRand | socat - tcp:10.0.3.12:8080
+
+C2 listen command:
+
+socat -v -v tcp-listen:8080,fork,reuseaddr exec:/bin/rng.sh
+
+/bin/rng.sh script:
+
+#!/bin/ash
+
+dd if=/dev/random bs=4 count=16 status=none | od -A none -t u4
+
 STATIC IP FOR CONTAINERS: -------------------------------------------------------------
 
 Create /etc/lxc/dhcp.conf
