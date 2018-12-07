@@ -2,14 +2,11 @@
 Setting up unprivileged two containers
 
 Hi.
-Our Solution doesnt work 100% we have troubles connecting it to the outside (web), we have come to the point where when
-we try to acces it remotely from the web we get 404:error page not found
-We dont know where it went wrong. 
-But we have created two unprivileged containers (C1, C2) C2 has the rand.numbers script and C1 can fetch random numbers
+We have created two unprivileged containers (C1, C2) C2 has the rand.numbers script and C1 can fetch random numbers
 from the C2. 
 We have forwarded the network connecting from the PI's port 80 to C1's port 80.
 unlike the other groups we have forwarded wlan0 instead of usb0 since our PI is setup thru wlan.
-it seems to work as intended, but we have trouble finding out where it went wrong.
+it seems to work as intended, but sometimes the static IP's of C1 and C2 is bugging, and they get a random IP adress
 
 Best regards group 6.
 
